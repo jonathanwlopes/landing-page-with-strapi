@@ -1,0 +1,83 @@
+{
+    "kind": "singleType",
+    "collectionName": "landing_pages",
+    "info": {
+        "singularName": "landing-page",
+        "pluralName": "landing-pages",
+        "displayName": "landingPage",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "logo": {
+            "type": "media",
+            "multiple": false,
+            "required": true,
+            "allowedTypes": [
+                "images"
+            ]
+        },
+        "header": {
+            "type": "component",
+            "repeatable": false,
+            "component": "page.header",
+            "required": true
+        },
+        "sectionAboutProject": {
+            "type": "component",
+            "repeatable": false,
+            "component": "page.section-about-project",
+            "required": true
+        },
+        "sectionTech": {
+            "type": "component",
+            "repeatable": false,
+            "component": "page.section-tech",
+            "required": true
+        },
+        "sectionConcept": {
+            "type": "component",
+            "repeatable": false,
+            "component": "page.section-concept"
+        },
+        "sectionModules": {
+            "type": "component",
+            "repeatable": false,
+            "component": "page.section-modules"
+        },
+        "sectionAgenda": {
+            "type": "component",
+            "repeatable": false,
+            "component": "page.section-agenda",
+            "required": true
+        },
+        "pricingBox": {
+            "type": "component",
+            "repeatable": false,
+            "component": "page.princing-box",
+            "required": true
+        },
+        "sectionAboutUs": {
+            "displayName": "sectionAboutUs",
+            "type": "component",
+            "repeatable": false,
+            "component": "page.section-about-us"
+        },
+        "sectionReviews": {
+            "displayName": "sectionReviews",
+            "type": "component",
+            "repeatable": false,
+            "component": "page.section-reviews",
+            "required": true
+        },
+        "sectionFaq": {
+            "type": "component",
+            "repeatable": false,
+            "component": "page.section-faq",
+            "required": true
+        }
+    }
+}

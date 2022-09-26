@@ -1,0 +1,21 @@
+{
+    "collectionName": "components_page_section_modules",
+    "info": {
+        "displayName": "sectionModules",
+        "icon": "angle-right",
+        "description": ""
+    },
+    "options": {},
+    "attributes": {
+        "module": {
+            "displayName": "module",
+            "type": "component",
+            "repeatable": true,
+            "component": "page.module"
+        },
+        "title": {
+            "type": "string",
+            "required": true
+        }
+    }
+}
