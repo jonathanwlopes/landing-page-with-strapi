@@ -48,6 +48,22 @@ export type SectionTechAPI = {
   techIcons: TechIconsAPI[]
 }
 
+export type SectionConceptAPI = {
+  title: string
+  concepts: {
+    title: string
+  }[]
+}
+
+export type SectionModulesAPI = {
+  title: string
+  module: {
+    title: string
+    subtitle: string
+    description: string
+  }[]
+}
+
 export type LandingPageAPI = {
   landingPage: {
     data: {
@@ -56,6 +72,8 @@ export type LandingPageAPI = {
         header: HeaderAPI
         sectionAboutProject: SectionAboutProjectAPI
         sectionTech: SectionTechAPI
+        sectionConcept: SectionConceptAPI
+        sectionModules: SectionModulesAPI
       }
     }
   }

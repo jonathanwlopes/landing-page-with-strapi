@@ -33,10 +33,5 @@ export const SubTitle = styled.h4`
   `}
 `
 
-export const Content = styled.div`
-  ${({ theme }) => css`
-    p + p {
-      margin-top: ${theme.spacings.small};
-    }
-  `}
-`
+export const Content = styled.div``
+

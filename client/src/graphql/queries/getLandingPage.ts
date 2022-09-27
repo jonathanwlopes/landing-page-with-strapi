@@ -53,6 +53,7 @@ fragment SECTION_TECH on LandingPage{
         data {
           attributes {
             url
+            name
             alternativeText
           }
         }
@@ -64,8 +65,22 @@ fragment SECTION_TECH on LandingPage{
 fragment SECTION_CONCEPT on LandingPage {
   sectionConcept {
     title
-    concepts {
+    concepts(pagination: {
+    start: 0,
+    limit: 50
+  }) {
       title 
+    }
+  }
+}
+
+fragment SECTION_MODULES on LandingPage {
+  sectionModules {
+    title
+    module {
+      title
+      subtitle
+      description
     }
   }
 }
@@ -79,6 +94,7 @@ query GET_LANDING_PAGE {
         ...SECTION_ABOUT
         ...SECTION_TECH
         ...SECTION_CONCEPT
+        ...SECTION_MODULES
       }
     }
   }

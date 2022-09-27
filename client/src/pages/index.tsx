@@ -7,7 +7,6 @@ import { FormattedLandingPageProps } from 'types/formattedAPI'
 import { GET_LANDING_PAGE } from 'graphql/queries/getLandingPage'
 
 import Footer from 'components/Footer'
-import JsonSchema from 'components/JsonSchema'
 import PricingBox from 'components/PricingBox'
 import SectionAboutProject from 'components/SectionAboutProject'
 import SectionAboutUs from 'components/SectionAboutUs'
@@ -21,29 +20,28 @@ import SectionTech from 'components/SectionTech'
 
 
 const Index = ({ landingPageFormatted }: FormattedLandingPageProps) => {
-  const { logo, header, sectionAboutProject, sectionTech } = landingPageFormatted
+  const { logo, header, sectionAboutProject, sectionTech, sectionConcept, sectionModules } = landingPageFormatted
 
   return (
     <>
       <SectionHero logo={logo} header={header} />
       <SectionAboutProject {...sectionAboutProject} />
       <SectionTech {...sectionTech} />
-      <SectionConcepts />
-      <SectionModules />
+      <SectionConcepts {...sectionConcept} />
+      <SectionModules {...sectionModules} />
       <SectionAgenda />
       <PricingBox />
       <SectionAboutUs />
       <SectionReviews />
       <SectionFaq />
       <Footer />
-      <JsonSchema />
     </>
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
   const { landingPage } = await client.request<Promise<LandingPageAPI>>(GET_LANDING_PAGE)
-  const { logo, header, sectionAboutProject, sectionTech } = landingPage.data.attributes
+  const { logo, header, sectionAboutProject, sectionTech, sectionConcept, sectionModules } = landingPage.data.attributes
 
   const landingPageFormatted = {
     logo: logo.data.attributes,
@@ -65,7 +63,9 @@ export const getStaticProps: GetStaticProps = async () => {
           alternativeText: icon.data.attributes.alternativeText
         }
       }))
-    }
+    },
+    sectionConcept,
+    sectionModules
   }
 
   return {
