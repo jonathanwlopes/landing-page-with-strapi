@@ -2,7 +2,7 @@ import { GetStaticProps } from 'next'
 import { client } from '../graphql'
 
 import { LandingPageAPI } from 'types/api'
-import { FormattedLandingPageProps } from 'types/formatedAPI'
+import { FormattedLandingPageProps } from 'types/formattedAPI'
 
 import { GET_LANDING_PAGE } from 'graphql/queries/getLandingPage'
 
@@ -18,6 +18,7 @@ import SectionHero from 'components/SectionHero'
 import SectionModules from 'components/SectionModules'
 import SectionReviews from 'components/SectionReviews'
 import SectionTech from 'components/SectionTech'
+
 
 const Index = ({ landingPageFormatted }: FormattedLandingPageProps) => {
   const { logo, header, sectionAboutProject, sectionTech } = landingPageFormatted
@@ -59,7 +60,9 @@ export const getStaticProps: GetStaticProps = async () => {
       techIcons: sectionTech.techIcons.map(({ icon, title }) => ({
         title,
         icon: {
-          url: icon.data.attributes.url
+          url: icon.data.attributes.url,
+          name: icon.data.attributes.name,
+          alternativeText: icon.data.attributes.alternativeText
         }
       }))
     }

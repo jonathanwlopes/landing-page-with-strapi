@@ -1,14 +1,13 @@
 /* API TYPES */
+import { IconProps, ImageProps } from "./global"
+
 type LogoAPI = {
   data: {
-    attributes: {
-      alternativeText: string
-      url: string
-    }
+    attributes: ImageProps
   }
 }
 
-type HeaderAPI = {
+export type HeaderAPI = {
   title: string
   description: string
   button: {
@@ -17,15 +16,12 @@ type HeaderAPI = {
   }
   image: {
     data: {
-      attributes: {
-        alternativeText: string
-        url: string
-      }
+      attributes: ImageProps
     }
   }
 }
 
-type SectionAboutProjectAPI = {
+export type SectionAboutProjectAPI = {
   title: string
   description: string
   image: {
@@ -38,20 +34,18 @@ type SectionAboutProjectAPI = {
   }
 }
 
-type SectionTechAPI = {
+export type TechIconsAPI = {
   title: string
-  techIcons: {
-    title: string
-    icon: {
-      data: {
-        attributes: {
-          name: string
-          url: string
-          alternativeText: string
-        }
-      }
+  icon: {
+    data: {
+      attributes: IconProps
     }
-  }[]
+  }
+}
+
+export type SectionTechAPI = {
+  title: string
+  techIcons: TechIconsAPI[]
 }
 
 export type LandingPageAPI = {
@@ -66,3 +60,4 @@ export type LandingPageAPI = {
     }
   }
 }
+

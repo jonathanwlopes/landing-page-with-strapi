@@ -1,8 +1,6 @@
-
-import { SectionTechProps } from 'types/formatedAPI'
-
 import Container from 'components/Container'
 import Heading from 'components/Heading'
+import { SectionTechProps } from 'types/formattedAPI'
 
 import { getImageURL } from 'utils/getImageURL'
 import * as S from './styles'

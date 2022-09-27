@@ -1,11 +1,10 @@
-import React from 'react'
 
-import Heading from 'components/Heading'
 import Container from 'components/Container'
+import Heading from 'components/Heading'
+import { SectionAboutProjectProps } from 'types/formattedAPI'
 
-import * as S from './styles'
-import { SectionAboutProjectProps } from 'types/api'
 import { getImageURL } from 'utils/getImageURL'
+import * as S from './styles'
 
 
 const SectionAboutProject = ({ description, image, title }: SectionAboutProjectProps) => (
