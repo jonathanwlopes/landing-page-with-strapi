@@ -20,7 +20,16 @@ import SectionTech from 'components/SectionTech'
 
 
 const Index = ({ landingPageFormatted }: FormattedLandingPageProps) => {
-  const { logo, header, sectionAboutProject, sectionTech, sectionConcept, sectionModules } = landingPageFormatted
+  const {
+    logo,
+    header,
+    sectionAboutProject,
+    sectionTech,
+    sectionConcept,
+    sectionModules,
+    sectionAgenda,
+    pricingBox
+  } = landingPageFormatted
 
   return (
     <>
@@ -29,8 +38,8 @@ const Index = ({ landingPageFormatted }: FormattedLandingPageProps) => {
       <SectionTech {...sectionTech} />
       <SectionConcepts {...sectionConcept} />
       <SectionModules {...sectionModules} />
-      <SectionAgenda />
-      <PricingBox />
+      <SectionAgenda {...sectionAgenda} />
+      <PricingBox {...pricingBox} />
       <SectionAboutUs />
       <SectionReviews />
       <SectionFaq />
@@ -41,7 +50,16 @@ const Index = ({ landingPageFormatted }: FormattedLandingPageProps) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const { landingPage } = await client.request<Promise<LandingPageAPI>>(GET_LANDING_PAGE)
-  const { logo, header, sectionAboutProject, sectionTech, sectionConcept, sectionModules } = landingPage.data.attributes
+  const {
+    logo,
+    header,
+    sectionAboutProject,
+    sectionTech,
+    sectionConcept,
+    sectionModules,
+    sectionAgenda,
+    pricingBox
+  } = landingPage.data.attributes
 
   const landingPageFormatted = {
     logo: logo.data.attributes,
@@ -65,7 +83,9 @@ export const getStaticProps: GetStaticProps = async () => {
       }))
     },
     sectionConcept,
-    sectionModules
+    sectionModules,
+    sectionAgenda,
+    pricingBox
   }
 
   return {

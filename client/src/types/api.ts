@@ -1,5 +1,5 @@
 /* API TYPES */
-import { IconProps, ImageProps } from "./global"
+import { IconProps, ImageProps, ButtonProps } from "./global"
 
 type LogoAPI = {
   data: {
@@ -64,6 +64,19 @@ export type SectionModulesAPI = {
   }[]
 }
 
+export type SectionAgendaAPI = {
+  title: string
+  description: string
+}
+
+export type PricingBoxAPI = {
+  totalPrice: string
+  numberInstallments: string
+  priceInstallments: string
+  benefits: string
+  button: ButtonProps
+}
+
 export type LandingPageAPI = {
   landingPage: {
     data: {
@@ -74,6 +87,8 @@ export type LandingPageAPI = {
         sectionTech: SectionTechAPI
         sectionConcept: SectionConceptAPI
         sectionModules: SectionModulesAPI
+        sectionAgenda: SectionAgendaAPI,
+        pricingBox: PricingBoxAPI
       }
     }
   }

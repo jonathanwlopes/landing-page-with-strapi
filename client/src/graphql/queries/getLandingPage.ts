@@ -85,6 +85,26 @@ fragment SECTION_MODULES on LandingPage {
   }
 }
 
+fragment SECTION_AGENDA on LandingPage {
+	sectionAgenda {
+    title
+    description
+  }  
+}
+
+fragment PRICING_BOX on LandingPage {
+  pricingBox {
+    totalPrice
+    numberInstallments
+    priceInstallments
+    benefits
+    button {
+      label
+      url
+    }
+  }
+}
+
 query GET_LANDING_PAGE {
   landingPage {
     data {
@@ -95,6 +115,8 @@ query GET_LANDING_PAGE {
         ...SECTION_TECH
         ...SECTION_CONCEPT
         ...SECTION_MODULES
+        ...SECTION_AGENDA
+        ...PRICING_BOX
       }
     }
   }

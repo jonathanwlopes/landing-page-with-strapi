@@ -1,5 +1,13 @@
 /* FORMATTED API TYPES */
-import { HeaderAPI, SectionAboutProjectAPI } from "./api"
+import {
+  HeaderAPI,
+  PricingBoxAPI,
+  SectionAboutProjectAPI,
+  SectionAgendaAPI,
+  SectionConceptAPI,
+  SectionModulesAPI
+} from "./api"
+
 import { ImageProps, TechIconsProps } from "./global"
 
 export type HeaderProps = Omit<HeaderAPI, 'image'> & {
@@ -15,21 +23,13 @@ export type SectionTechProps = {
   techIcons: TechIconsProps[]
 }
 
-export type SectionConceptProps = {
-  title: string
-  concepts: {
-    title: string
-  }[]
-}
+export type SectionConceptProps = SectionConceptAPI
 
-export type SectionModulesProps = {
-  title: string
-  module: {
-    title: string
-    subtitle: string
-    description: string
-  }[]
-}
+export type SectionModulesProps = SectionModulesAPI
+
+export type SectionAgendaProps = SectionAgendaAPI
+
+export type PricingBoxProps = PricingBoxAPI
 
 export type FormattedLandingPageProps = {
   landingPageFormatted: {
@@ -39,5 +39,7 @@ export type FormattedLandingPageProps = {
     sectionTech: SectionTechProps
     sectionConcept: SectionConceptProps
     sectionModules: SectionModulesProps
+    sectionAgenda: SectionAgendaProps,
+    pricingBox: PricingBoxProps
   }
 }

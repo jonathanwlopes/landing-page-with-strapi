@@ -59,21 +59,21 @@ export const DiscountPrice = styled.p`
   `}
 `
 
-export const BenefitsList = styled.ul`
-  ${({ theme }) => css`
+export const BenefitsList = styled.div`
+  ul {
+    ${({ theme }) => css`
     list-style: none;
     margin-bottom: ${theme.spacings.large};
   `}
-`
 
-export const BenefitsItem = styled.li`
-  ${({ theme }) => css`
+  li {
+    ${({ theme }) => css`
     color: ${theme.colors.black};
     font-size: ${theme.font.sizes.small};
     position: relative;
     padding-left: ${theme.spacings.small};
 
-    &::after {
+      &::after {
       content: ' ';
       position: absolute;
       width: 0.9rem;
@@ -88,6 +88,8 @@ export const BenefitsItem = styled.li`
       margin-bottom: ${theme.spacings.xsmall};
     }
   `}
+  }
+}
 `
 
 export const ButtonFullPrice = styled.span`
