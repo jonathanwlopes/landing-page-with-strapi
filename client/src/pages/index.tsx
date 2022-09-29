@@ -29,7 +29,9 @@ const Index = ({ landingPageFormatted }: FormattedLandingPageProps) => {
     sectionModules,
     sectionAgenda,
     pricingBox,
-    sectionAboutUs
+    sectionAboutUs,
+    sectionReviews,
+    sectionFaq
   } = landingPageFormatted
 
   return (
@@ -42,8 +44,8 @@ const Index = ({ landingPageFormatted }: FormattedLandingPageProps) => {
       <SectionAgenda {...sectionAgenda} />
       <PricingBox {...pricingBox} />
       <SectionAboutUs {...sectionAboutUs} />
-      <SectionReviews />
-      <SectionFaq />
+      <SectionReviews {...sectionReviews} />
+      <SectionFaq {...sectionFaq}/>
       <Footer />
     </>
   )
@@ -60,7 +62,9 @@ export const getStaticProps: GetStaticProps = async () => {
     sectionModules,
     sectionAgenda,
     pricingBox,
-    sectionAboutUs
+    sectionAboutUs,
+    sectionReviews,
+    sectionFaq
   } = landingPage.data.attributes
 
   const landingPageFormatted = {
@@ -100,7 +104,16 @@ export const getStaticProps: GetStaticProps = async () => {
           url: link.url
         }))
       }))
-    }
+    },
+    sectionReviews: {
+      ...sectionReviews,
+      reviews: sectionReviews.reviews.map((review) => ({
+        name: review.name,
+        text: review.text,
+        photo: review.photo.data.attributes
+      }))
+    },
+    sectionFaq
   }
 
   return {

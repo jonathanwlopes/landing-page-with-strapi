@@ -132,6 +132,34 @@ fragment SECTION_ABOUTUS on LandingPage {
   }
 }
 
+fragment SECTION_REVIEWS on LandingPage {
+  sectionReviews {
+    title
+    reviews {
+      name
+      text
+      photo {
+        data {
+           attributes {
+            url
+            alternativeText
+          }
+        }
+      }
+    }
+  }
+}
+
+fragment SECTION_FAQ on LandingPage {
+  sectionFaq {
+    title
+    questions {
+      answer
+      question
+    }
+  }
+}
+
 
 query GET_LANDING_PAGE {
   landingPage {
@@ -146,6 +174,8 @@ query GET_LANDING_PAGE {
         ...SECTION_AGENDA
         ...PRICING_BOX
         ...SECTION_ABOUTUS
+        ...SECTION_REVIEWS
+        ...SECTION_FAQ
       }
     }
   }

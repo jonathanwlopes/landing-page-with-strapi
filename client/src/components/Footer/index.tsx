@@ -11,7 +11,7 @@ const Footer = () => (
         Desenvolvido por{' '}
         <a href="https://willianjusten.com.br/">Willian Justen </a>,
         <a href="https://guilouro.dev"> Guilherme Louro</a> e
-        <a href="https://guilouro.dev"> Jonathan Lopes (Aluno)</a>
+        <a href="https://github.com/jonathanwlopes"> Jonathan Lopes (Aluno)</a>
       </p>
       <p>
         Design por <a href="https://dribbble.com/vmarcosp">Marcos Oliveira</a>

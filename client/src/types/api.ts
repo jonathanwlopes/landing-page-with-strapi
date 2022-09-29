@@ -102,6 +102,30 @@ export type sectionAboutUsAPI = {
   }
 }
 
+export type SectionReviewsAPI = {
+  title: string
+  reviews: {
+    name: string
+    text: string
+    photo: {
+      data: {
+        attributes: {
+          url: string
+          alternativeText: string
+        }
+      }
+    }
+  }[]
+}
+
+export type SectionFaqAPI = {
+  title: string
+  questions: {
+    answer: string
+    question: string
+  }[]
+}
+
 export type LandingPageAPI = {
   landingPage: {
     data: {
@@ -115,6 +139,8 @@ export type LandingPageAPI = {
         sectionAgenda: SectionAgendaAPI,
         pricingBox: PricingBoxAPI
         sectionAboutUs: sectionAboutUsAPI
+        sectionReviews: SectionReviewsAPI
+        sectionFaq: SectionFaqAPI
       }
     }
   }
