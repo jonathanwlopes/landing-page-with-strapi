@@ -3,12 +3,13 @@ import {
   HeaderAPI,
   PricingBoxAPI,
   SectionAboutProjectAPI,
+  sectionAboutUsAPI,
   SectionAgendaAPI,
   SectionConceptAPI,
   SectionModulesAPI
 } from "./api"
 
-import { ImageProps, TechIconsProps } from "./global"
+import { AuthorsProps, ImageProps, TechIconsProps } from "./global"
 
 export type HeaderProps = Omit<HeaderAPI, 'image'> & {
   image: ImageProps
@@ -31,6 +32,10 @@ export type SectionAgendaProps = SectionAgendaAPI
 
 export type PricingBoxProps = PricingBoxAPI
 
+export type SectionAboutUsProps = Omit<sectionAboutUsAPI, 'authors'> & {
+  authors: AuthorsProps[]
+}
+
 export type FormattedLandingPageProps = {
   landingPageFormatted: {
     logo: ImageProps
@@ -41,5 +46,6 @@ export type FormattedLandingPageProps = {
     sectionModules: SectionModulesProps
     sectionAgenda: SectionAgendaProps,
     pricingBox: PricingBoxProps
+    sectionAboutUs: SectionAboutUsProps
   }
 }

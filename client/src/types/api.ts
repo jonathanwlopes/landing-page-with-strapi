@@ -77,6 +77,31 @@ export type PricingBoxAPI = {
   button: ButtonProps
 }
 
+export type sectionAboutUsAPI = {
+  title: string
+  authors: {
+    data: {
+      attributes: {
+        photo: {
+          data: {
+            attributes: {
+              url: string
+              alternativeText: string
+            }
+          }
+        }
+        name: string
+        description: string
+        role: string
+        socialLinks: {
+          title: string
+          url: string
+        }[]
+      }
+    }[]
+  }
+}
+
 export type LandingPageAPI = {
   landingPage: {
     data: {
@@ -89,6 +114,7 @@ export type LandingPageAPI = {
         sectionModules: SectionModulesAPI
         sectionAgenda: SectionAgendaAPI,
         pricingBox: PricingBoxAPI
+        sectionAboutUs: sectionAboutUsAPI
       }
     }
   }

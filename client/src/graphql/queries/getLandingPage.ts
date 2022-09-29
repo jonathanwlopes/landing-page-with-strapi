@@ -44,7 +44,7 @@ fragment SECTION_ABOUT on LandingPage {
   }
 }
 
-fragment SECTION_TECH on LandingPage{
+fragment SECTION_TECH on LandingPage {
   sectionTech {
     title
     techIcons {
@@ -105,6 +105,34 @@ fragment PRICING_BOX on LandingPage {
   }
 }
 
+fragment SECTION_ABOUTUS on LandingPage {
+  sectionAboutUs {
+    title
+    authors {
+      data {
+        attributes {
+          photo {
+            data {
+              attributes {
+                url
+                alternativeText
+              }
+            }
+          }
+          name
+          description
+          role
+          socialLinks {
+            title
+            url
+          }
+        }
+      }
+    }
+  }
+}
+
+
 query GET_LANDING_PAGE {
   landingPage {
     data {
@@ -117,6 +145,7 @@ query GET_LANDING_PAGE {
         ...SECTION_MODULES
         ...SECTION_AGENDA
         ...PRICING_BOX
+        ...SECTION_ABOUTUS
       }
     }
   }

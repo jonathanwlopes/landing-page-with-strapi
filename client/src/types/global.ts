@@ -19,3 +19,14 @@ export type TechIconsProps = {
   title: string
   icon: IconProps
 }
+
+export type AuthorsProps = {
+  photo: ImageProps
+  name: string
+  description: string
+  role: string
+  socialLinks: Array<{
+    title: string
+    url: string
+  }>
+}
