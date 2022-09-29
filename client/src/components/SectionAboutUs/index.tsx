@@ -1,9 +1,10 @@
 
+import { SectionAboutUsProps } from 'types/formattedAPI'
+
 import Container from 'components/Container'
 import Heading from 'components/Heading'
 import ProfileCard from 'components/ProfileCard'
 
-import { SectionAboutUsProps } from 'types/formattedAPI'
 import * as S from './styles'
 
 const SectionAboutUs = ({ title, authors }: SectionAboutUsProps) => (

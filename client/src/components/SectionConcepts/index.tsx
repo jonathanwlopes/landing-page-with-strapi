@@ -1,8 +1,9 @@
 
+import { SectionConceptProps } from 'types/formattedAPI'
+
 import Container from 'components/Container'
 import Heading from 'components/Heading'
 
-import { SectionConceptProps } from 'types/formattedAPI'
 import * as S from './styles'
 
 const SectionConcepts = ({ title, concepts }: SectionConceptProps) => (

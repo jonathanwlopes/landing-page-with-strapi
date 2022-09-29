@@ -1,10 +1,10 @@
 import React from 'react'
+import { PricingBoxProps } from 'types/formattedAPI'
 
 import Button from 'components/Button'
 import { gaEvent } from 'utils/ga'
 
 import * as S from './styles'
-import { PricingBoxProps } from 'types/formattedAPI'
 
 const onClick = () =>
   gaEvent({ action: 'click', category: 'buy', label: 'pricing box button' })

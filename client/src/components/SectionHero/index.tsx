@@ -1,19 +1,22 @@
-import React from 'react'
 
-import Logo from 'components/Logo'
+import { HeaderProps } from 'types/formattedAPI'
+import { ImageProps } from 'types/global'
+
 import Button from 'components/Button'
+import Logo from 'components/Logo'
 import * as S from './styles'
 
-import { gaEvent } from 'utils/ga'
 import Container from 'components/Container'
-import { HeaderProps, LogoProps } from 'types/api'
+
+import { gaEvent } from 'utils/ga'
 import { getImageURL } from 'utils/getImageURL'
+
 
 const onClick = () =>
   gaEvent({ action: 'click', category: 'cta', label: 'hero button' })
 
 type Props = {
-  logo: LogoProps
+  logo: ImageProps
   header: HeaderProps
 }
 

@@ -1,7 +1,8 @@
 
+import { SectionAboutProjectProps } from 'types/formattedAPI'
+
 import Container from 'components/Container'
 import Heading from 'components/Heading'
-import { SectionAboutProjectProps } from 'types/formattedAPI'
 
 import { getImageURL } from 'utils/getImageURL'
 import * as S from './styles'
